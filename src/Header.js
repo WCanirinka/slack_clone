@@ -19,8 +19,8 @@ function Header() {
         {/* Time icon */}
       </div>
       <div className='header__search'>
-        <SearchIcon />
         <input placeholder='Search Job Alert' />
+        <SearchIcon />
       </div>
       <div className='header__right'>
         <HelpOutlineIcon />
