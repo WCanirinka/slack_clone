@@ -16,14 +16,12 @@ function Chat() {
       db.collection('rooms').doc(roomId).onSnapshot((snapshot) => (
         setRoomDetails(snapshot.data())
       ))
-    }
+    };
 
-    db.collection('rooms')
-      .doc(roomId)
-      .collection('messages')
+    db.collection('rooms').doc(roomId).collection('messages')
       .orderBy('timestamp', 'asc')
       .onSnapshot((snapshot) =>
-        setRoomMessages(snapshot.docs.map((doc) => doc.data))
+        setRoomMessages(snapshot.docs.map((doc) => (doc.data())))
       );
   }, [roomId])
 
