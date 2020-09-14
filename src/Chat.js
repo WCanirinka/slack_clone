@@ -21,8 +21,8 @@ function Chat() {
     db.collection('rooms').doc(roomId).collection('messages')
       .orderBy('timestamp', 'asc')
       .onSnapshot((snapshot) =>
-        setRoomMessages(snapshot.docs.map((doc) => (doc.data())))
-      );
+        setRoomMessages(snapshot.docs.map((doc) => doc.data())
+      ));
   }, [roomId])
 
   return (
@@ -43,7 +43,7 @@ function Chat() {
       </div>
       <div className='chat__messages'>
         {roomMessages.map(({ message, timestamp, user, userImage }) => (
-          <Message 
+          <Message
             message={message}
             timestamp={timestamp}
             user={user}

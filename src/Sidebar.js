@@ -55,7 +55,7 @@ function Sidebar() {
       <SidebarOption Icon={AddIcon} addChannelOption title='Add Channel' />
 
       {/* connect to db  and list all the channels */}
-      {/* sidebaroption will be used */}
+      {/* sidebar option will be used */}
       {channels.map((channel) => (
         <SidebarOption title={channel.name} id={channel.id} />
       ))}
@@ -63,4 +63,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default Sidebar;
